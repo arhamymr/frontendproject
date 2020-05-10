@@ -2,21 +2,24 @@ import React, { useState } from 'react';
 import Logo from "Assets/logo.png";
 import { Link } from "react-router-dom";
 
-// assets
-import PyAny from "Assets/pyany.png"
-import MiMusic from "Assets/mimusic.png"
-
-import DTC from "Assets/dtc.PNG";
-import Gakken from "Assets/gakken.PNG";
+import asset1 from "Assets/asset(1).png"
+import asset2 from "Assets/asset(2).png"
+import asset3 from "Assets/asset(3).png"
+import asset4 from "Assets/asset(4).png"
+import asset5 from "Assets/asset(5).png"
+import asset6 from "Assets/asset(6).png"
 
 import { 
 	Container, 
-	Content, 
-	Navigation, 
+	Content,
+	Gallery, 
 	PortoList,
-	PortofolioItem,
-	Img,
-	ActionContainer
+
+	Item1,
+	Item2,
+	Item3,
+	Item4,
+	Item5
 } from "./styled";
 
 const Portofolio = () => {
@@ -31,46 +34,15 @@ const Portofolio = () => {
 		        you can find <br/>
 		        my works here
 		      </h1> 
-
 		      <h2> 2020 </h2>
-
-		      <h3> Redesign Python Anywhere - Self Project</h3>
-		      <Img image={PyAny}/>
-		      <a href="www.google.com"> See the live version </a>
-
-		      <h3> Redesign Mi Music Android - Self Project</h3>
-		      <Img image={MiMusic}/>
-		      <ActionContainer>
-		      	<a href="www.google.com"> See the live version </a>
-		      </ActionContainer>
-
-					<h2> 2019 </h2>
-
-					<h3> Frontend Developer - Gakken Indonesi - Fulltime </h3>
-		      <Img image={Gakken}/>
-		      <ActionContainer>
-		      	<a href="www.google.com"> See Sites </a>
-		      </ActionContainer>
-
-					<h3> Frontend Developer - Docotel Teknologi Celebes - Fulltime </h3>
-		      <Img image={DTC}/>
-		      <ActionContainer>
-		      	<a href="www.google.com"> See Sites </a>
-		      </ActionContainer>
-
+		      <Gallery className="gallery">
+		      	<Item1 image={asset1}/>
+		      	<Item2 image={asset2}/>
+		      	<Item3 image={asset3}/>
+		      	<Item4 image={asset4}/>
+		      	<Item5 image={asset5}/>
+		      </Gallery>
 				</PortoList>
-				<Navigation>
-						<h2> 2020 </h2>
-						<ul>
-							<li><a href="#gakken"> Python Anywhere </a></li>
-							<li><a href="#dtc"> Mi Music </a></li>
-						</ul>
-						<h2> 2019 </h2>
-						<ul>
-							<li><a href="#gakken"> Gakken Indonesia </a></li>
-							<li><a href="#dtc"> Docotel Teknologi Celebes</a></li>
-						</ul>
-				</Navigation>
 			</Content>
 		</Container>
 		</>

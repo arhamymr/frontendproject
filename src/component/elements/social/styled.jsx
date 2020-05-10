@@ -5,6 +5,6 @@ export const Icon = styled.div`
 	margin-bottom: 12px;
 	margin-top: 12px;
 	svg {
-		margin-right: 12px;
+		margin-right: 22px;
 	}
 `

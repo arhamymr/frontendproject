@@ -4,6 +4,9 @@ import Footer from "Containers/footer";
 import Works from "Containers/works";
 import { Seo } from "Elements";
 
+// cursor 
+import { Cursor } from "Elements";
+
 import { 
 	Container,
 } from "./styled";
@@ -13,6 +16,7 @@ const App = () => {
   		<>
 	  		<Seo title="Works" />
 	      <Container>
+	      	<Cursor/>
 	      	<Works/>
 	      	<Footer/>
 	      </Container>

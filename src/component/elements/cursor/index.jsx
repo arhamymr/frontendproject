@@ -8,20 +8,23 @@ const Cursor = styled.div`
 	border-radius: 50%;
 	position: absolute;
 	pointer-events: none;
-	cursor: none;
 	backdrop-filter: invert(100%);
+	display: flex;
+	z-index: 9999999;
+	justify-content: center;
+	align-items: center;
 `
 
-const Index = ({ children }) => {
+const Index = () => {
 	
 	useEffect(() => {
 		customCursor()
 	}, [])
 
 	return (
-		<Cursor className="cursor"> 
-			{children} 
-		</Cursor>
+		<div>
+			<Cursor className="cursor"/> 
+		</div>
 	)
 };
 

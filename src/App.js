@@ -16,8 +16,7 @@ import Author from "Pages/author";
 import Works from "Pages/works";
 import PostDetail from "Pages/postDetail";
 
-// cursor 
-import { Cursor } from "Elements"
+
 
 const App = () => {
   return (
@@ -26,18 +25,15 @@ const App = () => {
         <Navbar/>
         <Switch>
           <Route exact path="/">
-            <Cursor/>
             <Home />
           </Route>
           <Route path="/author">
-            <Cursor/>
             <Author />
           </Route>
           <Route path="/post/:id">
             <PostDetail/>
           </Route>
            <Route path="/works">
-            <Cursor/>
             <Works />
           </Route>
           <Route path="*">

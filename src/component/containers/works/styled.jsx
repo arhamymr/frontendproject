@@ -9,14 +9,23 @@ export const Content = styled.div`
 	padding: 16px;
 	display: flex;
 	justify-content: center;
-	max-width: 700px;
+	max-width: 1200px;
 	margin: 50px auto 0 auto;
+`
+
+export const Gallery = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 300px 300px 300px;
+	${ maxSM } {
+		display: block;	
+	}
 `
 
 export const PortoList = styled.div`
 	flex: 3;
 	h1 {
-		font-size: 40px;
+		font-size: 60px;
 		margin-bottom: 50px;
 	}
 	h2 {
@@ -25,74 +34,65 @@ export const PortoList = styled.div`
 		letter-spacing: 10px;
 		color: ${ ({theme}) => theme.fontSoft };
 	}
-	h3 {
-		margin-top: 30px;
-		color: ${ ({theme}) => theme.fontSoft };
-		margin-bottom: 30px;
-	}
 `
 
-export const Navigation = styled.div`
-	flex: 1;
-	${ maxSM } {
-		display: none;
-	}
-	li a {
-		display: block;
-		color: ${({theme}) => theme.black };
-		text-decoration: none;
-		margin-bottom: 16px;
-		:hover {
-			color: ${({theme}) => theme.red };
-		}
-	}
-	h2 {
-		font-size: 25px;
-		margin-bottom: 16px;
-		letter-spacing: 10px;
-		color: ${ ({theme}) => theme.fontSoft };
-	}
-`
-
-export const PortofolioItem = styled.div`
-	box-shadow: 0 1px 10px ${({theme}) => theme.boxShadow};
-	padding: 8px;
-	border: none;
-	margin-bottom: 16px;
-	border-radius: 4px;
-	div {
-		padding: 16px;
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		a {
-			font-weight: bold;
-			color: ${ ({theme}) => theme.red };
-			text-decoration: none;
-		}
-	}
-`
-
-export const Img = styled.img`
-	margin-right: 16px;
-	width: 100%;
-	height: 150px;
-	border: none;
-	border-radius: 4px;
-	transition: height .5s;
+const Item = styled.div`
+	background-image: url('${({image}) => image }');
 	background-size: cover;
+	${ maxSM } {
+		width: 100%;
+		height: 300px;
+	}
+	position: relative;
+	overflow: hidden;
 	cursor: pointer;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: ${({theme}) => theme.boxShadow };
-	background-image: url("${({image}) => image }");
-	: hover {
-		height: 370px;
-		background-size: contain;
+	::after {
+		content: "Title not set - 2020";
+		position: absolute;
+		top: -52px;
+		transition: all .5s;
+		color: ${({theme}) => theme.white};
+		background-color: ${({theme}) => theme.black };
+		padding: 12px;
+	}
+	:hover {
+		:: after {
+			top : 0;
+		}
 	}
 `
 
-export const ActionContainer = styled.div`
-	display: flex;
-	margin-bottom: 30px;
+export const Item1 = styled(Item)`
+	::after {
+		content : "Gallery - Search new free image";
+	}
+	grid-column: 1;
+	grid-row: 1 / 3;
+`
+
+export const Item2 = styled(Item)`
+	::after {
+		content : "discoovr - tour and travel";
+	}
+`
+
+export const Item3  = styled(Item)`
+	::after {
+		content : "XBOX - Mobile Version";
+	}
+`
+
+export const Item4 = styled(Item)`
+	::after {
+		content : "Python Anywhere - Redesign python anywhere page";
+	}
+	grid-column: 2 / 4;
+`
+
+export const Item5 = styled(Item)`
+	::after {
+		content : "XBOX - Redesign XBOX website page";
+	}
+	grid-rows: 3 / 4;
+	grid-column: 1 / 4;
 `

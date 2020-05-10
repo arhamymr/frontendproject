@@ -7,19 +7,23 @@ import { Seo } from "Elements";
 import Footer from "Containers/footer";
 
 // assets
-import Profil from "Assets/profil.jpg";
+import Profil from "Assets/profil.png";
 
 // styled 
 import styled from 'styled-components';
 import { width } from 'Utils';
 
+// cursor
+import { Cursor } from "Elements"
+
 
 const Content = styled.div`
-	max-width: 450px;
+	max-width: 550px;
 	margin: 40px auto 0 auto;
+  padding: 16px;
   color:  ${({theme}) => theme.black };
   h1 {
-    font-size: 40px;
+    font-size: 60px;
     margin-bottom: 16px;
   }
   p {
@@ -32,9 +36,10 @@ const Content = styled.div`
 
 const ProfilPic =  styled.div`
   width: 100%;
-  height: 160px;
+  height: 260px;
   margin-top: 24px;
   margin-bottom: 24px;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-image: url(${({image}) => image});
@@ -45,6 +50,7 @@ const App = () => {
       <>
       <Seo title="Author - Frontend Project" />
       <Container>
+        <Cursor/>
   			<Content>
           <h1> 
               Hey, i'm Arham <br/>
