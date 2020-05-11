@@ -1,5 +1,15 @@
 import anime from 'animejs/lib/anime.es.js';
 
+
+export const animationMenu =  () => {
+	anime({
+		targets: '.menu',
+		duration: 1000,
+		keyframes: [
+			{translateX: 100}],
+	})
+}
+
 // cursor 
 export const animateExpandCursor = (expand) => {
 	anime({
@@ -13,8 +23,6 @@ export const animateExpandCursor = (expand) => {
 export const customCursor = () => {
 	const cursor = document.querySelector('.cursor');
 	const link = document.querySelectorAll('a');
-	const gallery = document.querySelectorAll('.gallery > div');
-	console.log(gallery)
 
 	document.addEventListener('mousemove', (e) => {
 		cursor.style.top = `${e.pageY - (cursor.clientHeight/2)}px`;
@@ -30,15 +38,6 @@ export const customCursor = () => {
 		})
 
 	})
-
-	gallery.forEach( item => {
-		item.addEventListener('mouseover', () => {
-		animateExpandCursor(7)
-		})
-		item.addEventListener('mouseout', () => {
-			animateExpandCursor(1)
-		})	
-	})	
 }
 
 

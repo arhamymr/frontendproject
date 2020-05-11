@@ -9,16 +9,16 @@ import { Card } from "Elements"
 const Header = () => {
 	
 	const [data, setData] = useState({})
-	useEffect(() => {
-		fetch("http://127.0.0.1:8000/article/")
-		.then( res => {
-			if (res.status === 200){
-				res.json()
-			}
-		}).then( resJson => {
-			setData(resJson)
-		})
-	}, [])
+	// useEffect(() => {
+	// 	fetch("http://127.0.0.1:8000/article/")
+	// 	.then( res => {
+	// 		if (res.status === 200){
+	// 			res.json()
+	// 		}
+	// 	}).then( resJson => {
+	// 		setData(resJson)
+	// 	})
+	// }, [])
 
 	return (
 		<>

@@ -15,6 +15,7 @@ import {
 	Gallery, 
 	PortoList,
 
+	Img,
 	Item1,
 	Item2,
 	Item3,
@@ -36,11 +37,16 @@ const Portofolio = () => {
 		      </h1> 
 		      <h2> 2020 </h2>
 		      <Gallery className="gallery">
-		      	<Item1 image={asset1}/>
-		      	<Item2 image={asset2}/>
-		      	<Item3 image={asset3}/>
-		      	<Item4 image={asset4}/>
-		      	<Item5 image={asset5}/>
+		      	<Item1 image={asset1} href="https://www.instagram.com/frontend.project/"  target="_blank"
+		      	/>
+		      	<Item2 image={asset2} href="https://www.instagram.com/frontend.project/"  target="_blank"
+		      	/>
+		      	<Item3 image={asset3} href="https://www.instagram.com/frontend.project/"  target="_blank"
+		      	/>
+		      	<Item4 image={asset4} href="https://www.instagram.com/frontend.project/"  target="_blank"
+		      	/>
+		      	<Item5 image={asset5} href="https://www.instagram.com/frontend.project/"  target="_blank"
+		      	/>
 		      </Gallery>
 				</PortoList>
 			</Content>

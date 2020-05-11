@@ -36,7 +36,7 @@ export const PortoList = styled.div`
 	}
 `
 
-const Item = styled.div`
+const Item = styled.a`
 	background-image: url('${({image}) => image }');
 	background-size: cover;
 	${ maxSM } {
@@ -46,6 +46,7 @@ const Item = styled.div`
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
+	display: block;
 	::after {
 		content: "Title not set - 2020";
 		position: absolute;

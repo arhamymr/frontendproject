@@ -70,9 +70,11 @@ const App = () => {
           </p>
           <p><strong>Experience</strong></p>
           <p> +1 Years </p>
-          <Button> Get In Touch </Button>
+          <a  target="_blank" href="mailto:arhamymr@gmail.com">
+            <Button> Get In Touch </Button>
+          </a>  
           <p> Professional profile can find on 
-            <a href="https://www.linkedin.com/in/arhamymrr"> linkedin</a>
+            <a target="_blank" href="https://www.linkedin.com/in/arhamymrr"> linkedin</a>
           </p>
         </Content>
         <Footer/>
