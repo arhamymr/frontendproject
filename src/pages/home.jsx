@@ -8,18 +8,12 @@ import LandingPage from "Containers/landingPage";
 // cursor 
 import { Cursor } from "Elements";
 
-// animation
-import { animationHome } from "Animations"
 
 const App = () => {
-	useEffect(() => {
-		animationHome()
-	}, [])
-
   return (
   		<>
 	  		<Seo title="Frontend Project"/>
-	      <Container className="home">
+	      <Container>
 	      	<Cursor/>
 	        <LandingPage />
 	      </Container>

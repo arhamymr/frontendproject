@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
 	max-width: 800px;
 	padding: 16px;
 	margin: 0 auto;
+	color:  ${({theme}) => theme.black };
 	h1 {
 			font-size: 60px;	
 			margin-bottom: 20px;
@@ -13,6 +14,11 @@ export const Wrapper = styled.div`
 `
 
 export const Content = styled.div`
-	columns: 3;
-	column-gap: 15px;
+	
+`
+
+export const Title = styled.p`
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 12px;
 `

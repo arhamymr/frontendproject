@@ -20,7 +20,8 @@ import {
 	Item2,
 	Item3,
 	Item4,
-	Item5
+	Item5,
+	Item6
 } from "./styled";
 
 const Portofolio = () => {
@@ -47,6 +48,7 @@ const Portofolio = () => {
 		      	/>
 		      	<Item5 image={asset5} href="https://www.instagram.com/frontend.project/"  target="_blank"
 		      	/>
+		      	<Item6 image={asset6} hrefe="https://www.instagram.com/frontend.project/" target="_blank"/>
 		      </Gallery>
 				</PortoList>
 			</Content>

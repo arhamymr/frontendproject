@@ -7,7 +7,6 @@ export const Container = styled.div`
 
 export const Content = styled.div`
 	padding: 16px;
-	display: flex;
 	justify-content: center;
 	max-width: 1200px;
 	margin: 50px auto 0 auto;
@@ -16,14 +15,14 @@ export const Content = styled.div`
 export const Gallery = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 300px 300px 300px;
+	grid-template-rows: 300px 300px 300px 300px;
 	${ maxSM } {
 		display: block;	
 	}
 `
 
 export const PortoList = styled.div`
-	flex: 3;
+	color:  ${({theme}) => theme.black };
 	h1 {
 		font-size: 60px;
 		margin-bottom: 50px;
@@ -96,4 +95,13 @@ export const Item5 = styled(Item)`
 	}
 	grid-rows: 3 / 4;
 	grid-column: 1 / 4;
+`
+
+export const Item6 = styled(Item)`
+	::after {
+		content : "Orion - Website";
+	}
+	grid-rows: 4 / 5;
+	grid-columns: 1 / 3;
+
 `

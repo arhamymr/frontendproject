@@ -39,14 +39,3 @@ export const customCursor = () => {
 
 	})
 }
-
-
-
-// home
-export const animationHome = () => {
-	anime({
-		targets: '.home',
-		duration: 1000,
-		opacity: [0, 1]
-	})
-}

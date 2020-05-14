@@ -8,10 +8,10 @@ import {
 
 const App = () => {
   return (
-      <Container>
-	      <Details/>
-      	<Footer/>
-      </Container>
+    <Container>
+      <Details/>
+    	<Footer/>
+    </Container>
   );
 }
 
