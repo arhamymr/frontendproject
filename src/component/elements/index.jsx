@@ -4,3 +4,6 @@ export { default as Button } from "./button";
 export { default as Social } from "./social";
 export { default as Seo } from "./seo";
 export { default as Cursor } from "./cursor";
+export { default as Skeleton } from "./skeleton";
+export { default as Input } from "./input";
+export { default as Icons } from "./icons";

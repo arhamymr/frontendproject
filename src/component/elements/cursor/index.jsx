@@ -15,12 +15,10 @@ const Cursor = styled.div`
 	align-items: center;
 `
 
-const Index = () => {
-	
+const Index = () => {	
 	useEffect(() => {
 		customCursor()
 	}, [])
-
 	return (
 		<div>
 			<Cursor className="cursor"/> 

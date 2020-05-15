@@ -1,21 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import Logo from "Assets/logo-full.png";
-import { Content, Wrapper, Title } from "./styled";
-import Footer from "Containers/footer";
 import { Link } from "react-router-dom";
-import { Card } from "Elements"
-// cursor 
+import { Icons } from "Elements"
 
-const Header = () => {
-	const secretKey = "AIzaSyDJymzqE90jcSw45Eek_Y1EBUuY_h0tgfk"
-	const blogID = "2100493342191057670"
-	const url = `https://www.googleapis.com/blogger/v3/blogs/${blogID}/posts?key=${secretKey}`
-	
+import { 
+	Content, 
+	Wrapper, 
+	Title, 
+	SearchIcon,
+	SearchBox
+} from "./styled";
+
+// part 
+import Loading from "./loading"
+import Search from "./search"
+
+import Footer from "Containers/footer";
+
+// api
+import { API_GET_LIST_POST } from "Config/api"
+
+const Index = () => {	
+
 	const [data, setData] = useState(null)
-	
 	// effect
 	useEffect(() => {
-		fetch(url)
+		fetch(API_GET_LIST_POST)
 	  .then(response => response.json())
 	  .then(json => setData(json))
 		}, [])
@@ -27,25 +37,34 @@ const Header = () => {
 				<h1> Sharing <br/>
 						 Knowledge</h1>
 			</div>
+			<SearchIcon>
+				<Icons name="search"/>
+				<p> Search Article </p>
+			</SearchIcon>
+			<Search/>
 			<Content>
 				<ul>
-				{ data === null ? 
-					<p> loading </p>
+				{ data === null ?
+					<Loading/>
 					:
 					data && data.items && data.items.map( item => {
-						let d = new Date(item.published)
-						return <li key={item.id}> 
-						<p>{d.toDateString()}</p>
-						<Link to={`/post/${item.id}`}><Title>{item.title}</Title></Link>
-					</li> })
+						let d = new Date(item.published);
+						return (
+							<li key={item.id}> 
+								<p>{d.toDateString()}</p>
+								<Link to={`/post/${item.id}`}>
+										<Title>{item.title}</Title>
+								</Link>
+							</li> 
+						)
+					})
 				}
 				</ul>
 			</Content>
 		</Wrapper>
-		
 		<Footer/>
 		</>
 	)
 }
 
-export default Header;
+export default Index;

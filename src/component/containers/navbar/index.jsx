@@ -36,15 +36,15 @@ const Navbar = () => {
 				<ul>
 					<MenuHamburger 
 						onClick={animationMenu}> <FiMenu/> </MenuHamburger>
-					<Menu className="menu">
+					<li>
 						<Link to='/'>Index</Link>
-					</Menu>
-					<Menu className="menu">
+					</li>
+					<li>
 						<Link to='/Works'>Works</Link>
-					</Menu>
-					<Menu className="menu">
+					</li>
+					<li>
 						<Link to='/author'>Author</Link>
-					</Menu>
+					</li>
 				</ul>
 			</Content>
 		</Container>

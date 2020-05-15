@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Button = styled.button`
-	Border: 3px solid ${({ theme }) => theme.background };
+	border: 3px solid ${({ theme }) => theme.black};
 	padding: 12px 16px;
 	font-weight: bold;
 	cursor: pointer;
