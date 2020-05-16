@@ -38,7 +38,7 @@ export const Title = styled.h1`
 export const Published = styled.small`
 	font-size: 13px;
 	display: block;
-	margin-bottom: 50px;
+	margin-bottom: 12px;
 `
 
 export const Article =  styled.div`
@@ -62,4 +62,21 @@ export const Share = styled.div`
 	flex-direction: column;
 	align-items: space-around;
 	height: 100px;
+`
+
+
+export const Author = styled.div`
+	display: flex;
+	align-items: center;
+	margin-bottom: 50px;
+`
+
+export const Avatar = styled.div`
+	width: 30px;
+	height: 30px;
+	background-image: url(${({img}) => img});
+	background-size: cover;
+	background-color: ${({theme}) => theme.fontSoft };
+	border-radius: 50%;
+	margin-right: 8px;
 `

@@ -1,23 +1,26 @@
 import React from "react";
-import { 
-	FaTwitter,
-	FaInstagram,
-	FaLinkedinIn,
-} from "react-icons/fa";
 
-import { IconContext } from "react-icons";
 import { Share } from "./styled";
 import { colors } from "Utils"
 
-const Index = () => (
-	<IconContext.Provider value={{ "size": "1.6em", color: colors.red }}>
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  MailruShareButton,
+  TelegramShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from "react-share";
+
+const Index = ({shareUrl}) => (
 	  <Share>
-	 		<a href="google.com"><FaTwitter/></a>
-	  	<a href="google.com"><FaTwitter/></a>
-	  	<a href="google.com"><FaTwitter/></a>
-	  	<a href="www.linkedin.com/in/arhamymrr"><FaLinkedinIn/></a>
+	 		<FacebookShareButton url={shareUrl}/>
+	 		<LinkedinShareButton url={shareUrl}/>
+	 		<MailruShareButton url={shareUrl}/>
+	 		<TelegramShareButton url={shareUrl}/>
+	 		<TwitterShareButton url={shareUrl}/>
+	 		<WhatsappShareButton url={shareUrl}/>
 	  </Share>
-  </IconContext.Provider>
 );
 
 export default Index;

@@ -5,15 +5,18 @@ import {
 	Content,
 	Title,
 	Published,
-	Article
+	Article,
+	Author,
+	Avatar
 } from "./styled";
 
-import parse from "html-react-parser"
-import { useParams } from "react-router-dom"
+import { Skeleton } from "Elements";
+import parse from "html-react-parser";
+import { useParams } from "react-router-dom";
 
 import Share from './share';
 // api
-import { API_GET_DETAIL_POST } from "Config/api"
+import { API_GET_DETAIL_POST } from "Config/api";
 
 const Index = () => {
 	const { id } = useParams()
@@ -32,18 +35,36 @@ const Index = () => {
 			<Content>
 				{ data ?
 				<>
-				<Share />
+				<Share shareUrl={data.author.image.url} />
 				<Title>
 					{data.title}
 				</Title>
-				<Published> {data.published} </Published>
-				<p>{ data.author.displayName }</p>
+				<Published> {new Date(data.published).toDateString()} </Published>
+				<Author>
+					<Avatar img={data.author}/>
+					<p>{ data.author.displayName }</p>
+				</Author>
 				<Article>
 					{parse(data.content)}				
 				</Article>
 				</>
 				: 
-				<p> loading </p>
+				<>
+					<Skeleton 
+						marginTop="50px"
+						width="80%" 
+						marginBottom="12px"
+					/>
+					<Skeleton 
+						width="20%" 
+						marginBottom="12px"
+					/>
+					<Skeleton 
+						width="30%" 
+						marginBottom="12px"
+					/>
+					<Skeleton height="300px"/>
+				</>
 				}
 			</Content>
 		</Container>
