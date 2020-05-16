@@ -5,7 +5,12 @@ const Input = styled.input`
 		padding: 12px;
 		width: 100%;
 		max-width: 250px;
-		border: 3px solid ${({theme}) => theme.black };
+		font-size: 18px;
+		outline: none;
+		border: none;
+		color: ${ ({theme}) => theme.primary };
+		appearance: none;
+		border-bottom: 1px solid ${({theme}) => theme.black };
 `
 
 const Index = ({...props}) => {

@@ -7,3 +7,4 @@ export { default as Cursor } from "./cursor";
 export { default as Skeleton } from "./skeleton";
 export { default as Input } from "./input";
 export { default as Icons } from "./icons";
+export { default as Label } from "./label";

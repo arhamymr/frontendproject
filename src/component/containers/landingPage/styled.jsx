@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
 	color:  ${({theme}) => theme.black };
 	h1 {
 			font-size: 60px;	
-			margin-bottom: 20px;
 	}
 `
 
@@ -18,12 +17,20 @@ export const Content = styled.div`
 		text-decoration: none;
 		color: ${({theme}) => theme.black };
 	}
+	li {
+		margin-bottom: 12px;
+		padding-bottom: 12px;
+		border-bottom: 1px solid ${({theme}) => theme.border };
+		:last-of-type {
+			border: none;
+		}
+	}
 `
 
 export const Title = styled.p`
 	font-size: 20px;
 	font-weight: bold;
-	margin-bottom: 12px;
+	margin-bottom: 4px;
 	:hover {
 		color: ${({theme}) => theme.primary };
 	}
@@ -33,23 +40,74 @@ export const SearchBox = styled.div`
 	display: flex;
 	align-items: center;
 	padding: 12px 0;
+	max-width: 300px;
 	margin-bottom: 24px;
 	input {
 		margin-right: 12px;
 	}
+	i {
+		font-size: 40px;
+		cursor: pointer;
+	}
 `
 
-export const SearchResult = styled.div`
-	border: 1px solid ${({ theme }) => theme.primary };
+export const SearchResult = styled.ul`
+	border: 1px solid ${({ theme }) => theme.border };
 	padding: 16px;
+	border-radius: 4px;
+	position: relative;
+	list-style: none;
+	li {
+		margin: 12px 0;
+		padding-bottom: 12px;
+		border-bottom: 1px solid ${({theme}) => theme.border }; 
+		a {
+			text-decoration: none;
+			color: ${({ theme }) => theme.black };
+		}
+		:last-of-type {
+			border: none;
+		}
+	}
 `
 
 export const SearchIcon = styled.div`
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+	max-width: 300px;
 	p {
 		margin-left: 12px;
 		color: ${({theme}) => theme.fontSoft};
+	}
+`
+
+export const ErrorWrapper = styled.div`
+	text-align: center;
+	padding: 24px;
+	img {
+		width: 100px;
+		margin-bottom:12px;
+	}
+	p {
+		margin-bottom: 12px;
+	}
+`
+export const Close = styled.div`
+	display: flex;
+	align-items: center;
+	background-color: ${({theme}) => theme.yellow };
+	padding: 4px 12px;
+	position: absolute;
+	right:  10px;
+	top: 10px;
+	border-radius: 12px;
+	cursor: pointer;
+`
+
+export const NotFound = styled.div`
+	text-align: center;
+	img {
+		max-width: 100px;
 	}
 `
