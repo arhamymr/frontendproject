@@ -1,15 +1,5 @@
 import anime from 'animejs/lib/anime.es.js';
 
-
-export const animationMenu =  () => {
-	anime({
-		targets: '.menu',
-		duration: 1000,
-		keyframes: [
-			{translateX: 100}],
-	})
-}
-
 // cursor 
 export const animateExpandCursor = (expand) => {
 	anime({

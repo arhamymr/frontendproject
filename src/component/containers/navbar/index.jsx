@@ -19,8 +19,6 @@ import { colors } from "Utils";
 import { FiMenu } from "react-icons/fi";
 import { IconContext } from "react-icons";
 
-// animation
-import { animationMenu } from "Animations"
 
 const Navbar = () => {
 	return (
@@ -34,8 +32,8 @@ const Navbar = () => {
 					</Link>
 				</NavLogo>
 				<ul>
-					<MenuHamburger 
-						onClick={animationMenu}> <FiMenu/> </MenuHamburger>
+					{/* <MenuHamburger 
+					// 	onClick={animationMenu}> <FiMenu/> </MenuHamburger>*/}
 					<li>
 						<Link to='/'>Index</Link>
 					</li>

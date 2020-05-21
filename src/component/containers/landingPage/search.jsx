@@ -23,6 +23,7 @@ const Index = ({isSearching}) => {
 	  .then(json => {
 	  	setSearch(json)
 	  })
+	  .catch( () => setSearching(false))
 	}
 
 	const handleKeyDown = (e) => {

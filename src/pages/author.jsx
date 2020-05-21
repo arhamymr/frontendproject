@@ -45,6 +45,8 @@ const ProfilPic =  styled.div`
   background-image: url(${({image}) => image});
 `
 
+const years = new Date().getFullYear() - 2019
+  
 const App = () => {
   return (
       <>
@@ -69,7 +71,7 @@ const App = () => {
               Indonesia
           </p>
           <p><strong>Experience</strong></p>
-          <p> +1 Years </p>
+          <p> +{years} Years </p>
           <a  target="_blank" href="mailto:arhamymr@gmail.com">
             <Button> Get In Touch </Button>
           </a>  

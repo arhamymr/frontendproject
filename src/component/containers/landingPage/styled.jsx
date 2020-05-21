@@ -1,6 +1,18 @@
-import styled from 'styled-components'
+import styled, {keyframes}from 'styled-components'
 import { maxMD, maxSM} from "Utils";
 
+
+const anim = keyframes`
+	0% {
+		opacity: 0;
+		top: 20px;
+	}
+	100% {
+		opacity: 1;
+		top: 0px;
+	}
+
+`
 export const Wrapper = styled.div`
 	width: 100%;
 	max-width: 800px;
@@ -54,8 +66,10 @@ export const SearchBox = styled.div`
 export const SearchResult = styled.ul`
 	border: 1px solid ${({ theme }) => theme.border };
 	padding: 16px;
+	position: relative;
 	border-radius: 4px;
 	position: relative;
+	animation:  .4s ${anim} ease;
 	list-style: none;
 	li {
 		margin: 12px 0;

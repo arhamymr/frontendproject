@@ -55,13 +55,19 @@ export const ItemContainer = styled.div`
 
 export const Share = styled.div`
 	position: sticky;
-	top: 100px;
+	top: 150px;
 	float: left;
-	margin-left: -60px;
+	margin-left: -100px;
 	display: flex;
 	flex-direction: column;
 	align-items: space-around;
 	height: 100px;
+	button {
+		margin-bottom: 12px;
+	}
+	p {
+		margin-bottom: 12px;
+	}
 `
 
 
@@ -79,4 +85,16 @@ export const Avatar = styled.div`
 	background-color: ${({theme}) => theme.fontSoft };
 	border-radius: 50%;
 	margin-right: 8px;
+`
+
+export const ErrorWrapper = styled.div`
+	text-align: center;
+	padding: 24px;
+	img {
+		width: 100px;
+		margin-bottom:12px;
+	}
+	p {
+		margin-bottom: 12px;
+	}
 `
