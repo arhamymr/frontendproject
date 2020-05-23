@@ -29,13 +29,47 @@ const Index = () => {
 	const [data, setData] = useState(null)
 	const [error, setError] = useState(false)
 
-	// effect
-	const handleGetDetail = () => {
-		fetch(API_GET_DETAIL_POST(id))
-	  .then(response => response.json())
-	  .then(json => setData(json))
+	const fetchData = (headers) => {
+		fetch(API_GET_DETAIL_POST(id), {
+			"method": "GET",
+			"headers": headers
+		})
+	  .then(response => {
+	  	if (response.status === 304) {
+		  		return setData(JSON.parse(localStorage.getItem("post-detail")))
+	  	}
+	  	if (response.status === 200) {
+	  		return response.json()
+	  	}
+	  })
+	  .then(json => {
+	  	if (json) {
+		  	setData(json)
+		  	localStorage.setItem("etag-post", json.etag)
+		  	localStorage.setItem("post-detail", JSON.stringify(json))
+		  }
+		 })
 	  .catch( () => setError(true))
 	}
+	// effect
+	const handleGetDetail = () => {
+		const headers = {
+			"Accept-Encoding": "gzip",
+			"User-Agent": navigator.userAgent
+		}
+		if (localStorage.getItem("etag-post")) {
+			fetchData({
+				...headers,
+				"If-None-Match": localStorage.getItem("etag-post")
+			})
+		} else {
+			fetchData({
+				...headers,
+			})
+		}
+	}
+
+
 
 	useEffect(() => {
 		handleGetDetail();

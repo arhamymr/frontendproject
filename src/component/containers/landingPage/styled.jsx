@@ -20,7 +20,10 @@ export const Wrapper = styled.div`
 	margin: 0 auto;
 	color:  ${({theme}) => theme.black };
 	h1 {
-			font-size: 60px;	
+			font-size: 60px;
+			${maxSM}{
+				font-size: 40px;
+			}	
 	}
 `
 
@@ -31,10 +34,13 @@ export const Content = styled.div`
 	}
 	li {
 		margin-bottom: 12px;
-		padding-bottom: 12px;
+		padding: 12px;
 		border-bottom: 1px solid ${({theme}) => theme.border };
 		:last-of-type {
 			border: none;
+		}
+		: hover {
+			background-color: ${({theme}) => theme.backgroundSoft };
 		}
 	}
 `

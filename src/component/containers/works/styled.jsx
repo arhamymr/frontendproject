@@ -9,7 +9,7 @@ export const Content = styled.div`
 	padding: 16px;
 	justify-content: center;
 	max-width: 1200px;
-	margin: 50px auto 0 auto;
+	margin: 0 auto;
 `
 
 export const Gallery = styled.div`
@@ -26,6 +26,9 @@ export const PortoList = styled.div`
 	h1 {
 		font-size: 60px;
 		margin-bottom: 50px;
+		${maxSM} {
+			font-size: 40px;
+		}
 	}
 	h2 {
 		font-size: 25px;
@@ -49,7 +52,7 @@ const Item = styled.a`
 	::after {
 		content: "Title not set - 2020";
 		position: absolute;
-		top: -52px;
+		top: -100px;
 		transition: all .5s;
 		color: ${({theme}) => theme.white};
 		background-color: ${({theme}) => theme.black };
@@ -102,6 +105,5 @@ export const Item6 = styled(Item)`
 		content : "Orion - Website";
 	}
 	grid-rows: 4 / 5;
-	grid-columns: 1 / 3;
-
+	grid-column: 1 / 4;
 `

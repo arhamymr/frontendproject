@@ -11,7 +11,7 @@ import Profil from "Assets/profil.png";
 
 // styled 
 import styled from 'styled-components';
-import { width } from 'Utils';
+import { width, maxSM } from 'Utils';
 
 // cursor
 import { Cursor } from "Elements"
@@ -25,6 +25,9 @@ const Content = styled.div`
   h1 {
     font-size: 60px;
     margin-bottom: 16px;
+    ${maxSM} {
+      font-size: 40px;
+    }
   }
   p {
     margin-bottom: 8px;
@@ -60,9 +63,9 @@ const App = () => {
               frontend project
           </h1>        
           <p>
-            I’m a Frontend Developer and UI Designer <br/>
-            can help your company to creating a beautyfull <br /> 
-            user-interfaces website and transform it to <br />
+            I’m a Frontend Developer and UI Designer
+            can help your company to creating a beautyfull 
+            user-interfaces website and transform it to 
             cutting-edge and hight-quality frontend code. 
           </p>
           <ProfilPic image={Profil} />

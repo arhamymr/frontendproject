@@ -1,8 +1,13 @@
 import styled from 'styled-components'
+import { maxSM } from "Utils"
 
 export const Container = styled.div`
   max-width: 1920px;
   margin: 0 auto;
+  padding-top: 100px;
+  ${maxSM} {
+  	padding-top: 0px;	
+  }
 `
 
 export const Logo = styled.img`

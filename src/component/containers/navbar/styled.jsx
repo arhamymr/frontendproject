@@ -4,7 +4,21 @@ import { width, maxMD, minSM, maxSM} from "Utils"
 export const Container = styled.div`
 	width: 100%;
 	font-size: 17px;
-	padding-top: 20px;
+	${minSM}{
+	position: fixed;
+	}
+	box-shadow: 0px 2px 7px rgba(0,0,0,0.05);
+	z-index: 9999;
+	background-color: ${({theme}) => theme.white };
+`
+
+export const BoxOffline = styled.div`
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    font-size: 15px;
+    background-color: ${({theme}) => theme.primary };
+    color: ${({theme}) => theme.white };
 `
 
 export const NavLogo = styled.div`
@@ -13,23 +27,20 @@ export const NavLogo = styled.div`
 		color: ${({theme}) => theme.black };
 	}
 	img {
-		width: 40px;
+		width: 100px;
 	}
 `
 
 export const Content = styled.div`
 	max-width: ${ width.maxWidth };
+	display: flex;
 	margin: 0 auto;
 	width: 100%;
 	justify-content: space-between;
-	${({ state }) => state == "/" ? 
-	"align-items: flex-start;" :
-	"align-items: center;"
-	}
+	align-items: center;
 	${ maxSM } {
-		align-items: flex-start;
+		align-items: flex-end;
 	}
-	display: flex;
 	transition: all 1s;
 	padding: 12px 16px;
 	> div {
@@ -62,10 +73,6 @@ export const Content = styled.div`
 	}
 `
 
-export const Img = styled.img`
-	margin-right: 16px;
-	width: 160px;
-`
 
 export const Urlname = styled.div`
 	position: absolute;
@@ -74,7 +81,7 @@ export const Urlname = styled.div`
 	top: 140px;
 	left: -80px;
 	font-size: 30px;
-	color: ${({theme}) => theme.backgroundSoft};
+	color: ${({theme}) => theme.black};
 `
 
 export const MenuHamburger = styled.li`

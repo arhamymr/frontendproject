@@ -21,6 +21,10 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+body {
+	overflow-x: hidden;
+}
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -50,4 +54,27 @@ pre code{
   background-color: #28313E;
   width: 100%;
 	color: #ffffff;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #28313E;
+  border-radius: 10px;
+  opacity: .3;
+  padding: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  
 }

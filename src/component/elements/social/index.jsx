@@ -14,7 +14,7 @@ import {
 import { colors } from "Utils"
 
 const Index = () => (
-	<IconContext.Provider value={{ "size": "1.6em", color: colors.black }}>
+	<IconContext.Provider value={{ "size": "1.4em", color: colors.white }}>
 	  <Icon>
 	  	<a target="_blank" href="https://www.github.com/arhamymr"><FaGithub/></a>
 	  	<a target="_blank" href="https://www.twitter.com/arhamymr"><FaTwitter/></a>

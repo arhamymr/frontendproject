@@ -28,20 +28,54 @@ const Index = () => {
 	const [data, setData] = useState(null)
 	const [searching, setSearching] = useState(false)
 	const [error, setError] = useState(true)
+	console.log("data",data)
 
-	// effect
-	
+	const fetchData = (headers) => {
+			fetch(API_GET_LIST_POST, {
+				method: "GET",
+				headers: headers
+			})
+		  .then(response => {
+		  	if (response.status === 304) {
+		  		return setData(JSON.parse(localStorage.getItem("post")))
+		  	}
+		  	if (response.status === 200) {
+		  		return response.json()
+		  	}
+		  })
+		  .then(json => {
+		  	if (json) {
+			  	setData(json.items)
+			  	localStorage.setItem("etag", json.etag)
+			  	localStorage.setItem("post", JSON.stringify(json.items))
+			  }
+		  })
+		  .catch(e => setError(true))
+	}
+
 	const handleGetPost = () => {
 		setError(false)
-		fetch(API_GET_LIST_POST)
-	  .then(response => response.json())
-	  .then(json => setData(json))
-	  .catch(() => setError(true) )
-		
+
+		const headers = {
+			"Accept-Encoding": "gzip",
+			"User-Agent": navigator.userAgent
+		}
+
+		if (localStorage.getItem("etag")) {
+			fetchData({
+				...headers,
+				"If-None-Match": localStorage.getItem("etag")
+			})
+		} else {
+			fetchData({
+				...headers
+			})
+		}
 	}
+
 	useEffect(() => {
 		handleGetPost()
-		}, [])
+	}, [])
 	
 	const handleIsSearching = (bool) => {
 		setSearching(bool)
@@ -58,7 +92,7 @@ const Index = () => {
 			<Content>
 				{ error && !searching && 
 					<ErrorWrapper>
-						<img src={trypng} alt="foto pixabay"/>
+						<img src={trypng} alt="something wrong"/>
 						<p>Something wrong</p>
 						<Button className="expand" onClick={handleGetPost}> Try Again </Button>
 					</ErrorWrapper>
@@ -69,7 +103,7 @@ const Index = () => {
 					{ data === null ?
 						<Loading/>
 						:
-						data && data.items && data.items.map( item => {
+						data && data.map( item => {
 							let d = new Date(item.published);
 							return (
 								<li key={item.id}> 
