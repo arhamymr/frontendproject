@@ -2,9 +2,9 @@ import React from 'react';
 import { Seo, Button} from "Elements"
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+
 // image 
 import Notfound from "Assets/notfound.png";
-
 
 const Container = styled.div`
 		text-align: center;

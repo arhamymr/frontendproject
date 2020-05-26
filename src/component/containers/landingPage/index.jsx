@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import { Icons, Label, Button } from "Elements"
+import { Icons, Label, Button, Cursor } from "Elements"
 
 import { 
 	Content, 
@@ -28,8 +28,7 @@ const Index = () => {
 	const [data, setData] = useState(null)
 	const [searching, setSearching] = useState(false)
 	const [error, setError] = useState(true)
-	console.log("data",data)
-
+	
 	const fetchData = (headers) => {
 			fetch(API_GET_LIST_POST, {
 				method: "GET",
@@ -103,7 +102,9 @@ const Index = () => {
 					{ data === null ?
 						<Loading/>
 						:
-						data && data.map( item => {
+						<>
+						<Cursor/>
+						{ data && data.map( item => {
 							let d = new Date(item.published);
 							return (
 								<li key={item.id}> 
@@ -119,6 +120,8 @@ const Index = () => {
 								</li> 
 							)
 						})
+						}
+						</>
 					}
 					</ul>
 				}

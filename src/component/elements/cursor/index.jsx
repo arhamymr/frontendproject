@@ -9,10 +9,18 @@ const Cursor = styled.div`
 	position: absolute;
 	pointer-events: none;
 	backdrop-filter: invert(100%);
-	display: flex;
 	z-index: 9999999;
-	justify-content: center;
-	align-items: center;
+`
+
+const Dot = styled.div`
+	width: 5px;
+	position: absolute;
+	height: 5px;
+	margin: 10px;
+	pointer-events: none;
+	z-index: 999999;
+	background-color: ${({theme}) => theme.red };
+	border-radius: 50%;
 `
 
 const Index = () => {	
@@ -21,7 +29,8 @@ const Index = () => {
 	}, [])
 	return (
 		<div>
-			<Cursor className="cursor"/> 
+			<Cursor className="cursor"/>
+			<Dot className="dot"/>
 		</div>
 	)
 };

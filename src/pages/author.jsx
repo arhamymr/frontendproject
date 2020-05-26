@@ -47,8 +47,6 @@ const ProfilPic =  styled.div`
   background-repeat: no-repeat;
   background-image: url(${({image}) => image});
 `
-
-const years = new Date().getFullYear() - 2019
   
 const App = () => {
   return (
@@ -59,7 +57,7 @@ const App = () => {
   			<Content>
           <h1> 
               Hey, i'm Arham <br/>
-              Welcome to <br/>
+              welcome to <br/>
               frontend project
           </h1>        
           <p>
@@ -73,9 +71,17 @@ const App = () => {
           <p> Polewali Mandar, <br/>
               Indonesia
           </p>
+          <p><strong>What My Focus</strong></p>
+          <p> Frontend Developer </p>
+          <p> - React.js <br/>
+              - Performance & Accessibilty <br/>
+              - Animation </p>
+          <p> More </p>
+          <p> - UI Design <br/>
+              - Design Grafis </p>
           <p><strong>Experience</strong></p>
-          <p> +{years} Years </p>
-          <a  target="_blank" href="mailto:arhamymr@gmail.com">
+          <p> +{ new Date().getFullYear() - 2019} Years </p>
+          <a target="_blank" href="mailto:arhamymr@gmail.com">
             <Button> Get In Touch </Button>
           </a>  
           <p> Professional profile can find on 
