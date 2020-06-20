@@ -17,8 +17,6 @@ const getAngle = (cursor, e) => {
 	return angle
 }
 
-// speed = distance / time
-
 const mouse = new MouseSpeed()
 mouse.init()
 

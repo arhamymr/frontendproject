@@ -1,5 +1,4 @@
-module.exports = class MouseSpeed {
-  
+export default class MouseSpeed {
   constructor() {
     this.distance = 0
     this.getDistance = this.getDistance.bind(this)

@@ -27,17 +27,9 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "postbuild": "react-snap",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-  },
-  "reactSnap": {
-    "source": "build",
-    "minifyHtml": {
-      "collapseWhitespace": false,
-      "removeComments": true
-    }
   },
   "eslintConfig": {
     "extends": "react-app"

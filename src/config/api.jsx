@@ -8,3 +8,9 @@ export const API_GET_DETAIL_POST = id => `${HOST}/v3/blogs/${BLOG_ID}/posts/${id
 
 export const API_SEARCH_POST = query => `${HOST}/v3/blogs/${BLOG_ID}/posts/search?q=${query}&key=${SECRET_KEY}`
 	
+
+const api = {
+	API_GET_LIST_POST: `${HOST}/v3/blogs/${BLOG_ID}/posts?key=${SECRET_KEY}&fields=etag,items(id,title,published,labels)`,
+	API_GET_DETAIL_POST: id => `${HOST}/v3/blogs/${BLOG_ID}/posts/${id}?key=${SECRET_KEY}`,
+	API_SEARCH_POST: query => `${HOST}/v3/blogs/${BLOG_ID}/posts/search?q=${query}&key=${SECRET_KEY}`
+}
