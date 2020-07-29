@@ -1,5 +1,5 @@
 import styled, {keyframes}from 'styled-components'
-import { maxMD, maxSM} from "Utils";
+import { width, maxMD, maxSM} from "Utils";
 
 
 const anim = keyframes`
@@ -15,15 +15,14 @@ const anim = keyframes`
 `
 export const Wrapper = styled.div`
 	width: 100%;
-	max-width: 800px;
-	padding: 16px;
+	max-width: ${width.maxWidth};
 	margin: 0 auto;
 	color:  ${({theme}) => theme.black };
 	h1 {
 			font-size: 60px;
 			${maxSM}{
 				font-size: 40px;
-			}	
+			}
 	}
 `
 
@@ -80,7 +79,7 @@ export const SearchResult = styled.ul`
 	li {
 		margin: 12px 0;
 		padding-bottom: 12px;
-		border-bottom: 1px solid ${({theme}) => theme.border }; 
+		border-bottom: 1px solid ${({theme}) => theme.border };
 		a {
 			text-decoration: none;
 			color: ${({ theme }) => theme.black };

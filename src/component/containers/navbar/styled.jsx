@@ -4,10 +4,6 @@ import { width, maxMD, minSM, maxSM} from "Utils"
 export const Container = styled.div`
 	width: 100%;
 	font-size: 17px;
-	${minSM}{
-	position: fixed;
-	}
-	box-shadow: 0px 2px 7px rgba(0,0,0,0.05);
 	z-index: 9999;
 	background-color: ${({theme}) => theme.white };
 `
@@ -25,16 +21,14 @@ export const NavLogo = styled.div`
 	a {
 		text-decoration: none;
 		color: ${({theme}) => theme.black };
-	}
-	img {
-		width: 100px;
+		font-weight: 700;
 	}
 `
 
 export const Content = styled.div`
 	max-width: ${ width.maxWidth };
 	display: flex;
-	margin: 0 auto;
+	margin: 3% auto;
 	width: 100%;
 	justify-content: space-between;
 	align-items: center;
@@ -52,7 +46,7 @@ export const Content = styled.div`
 	}
 	ul > li {
 
-		${({ state }) => state === "/" ? 
+		${({ state }) => state === "/" ?
 			"display: none;" : "display: inline-block;"}
 		${ maxMD } {
 			display: inline-block;

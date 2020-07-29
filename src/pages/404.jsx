@@ -3,7 +3,7 @@ import { Seo, Button} from "Elements"
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-// image 
+// image
 import Notfound from "Assets/notfound.png";
 
 const Container = styled.div`

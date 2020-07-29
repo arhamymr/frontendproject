@@ -2,33 +2,33 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { Icons, Label, Button, Cursor } from "Elements"
 
-import { 
-	Content, 
-	Wrapper, 
-	Title, 
+import {
+	Content,
+	Wrapper,
+	Title,
 	SearchIcon,
 	SearchBox,
 	ErrorWrapper
 } from "./styled";
 
-// part 
+// part
 import Loading from "./loading"
 import Search from "./search"
 import Footer from "Containers/footer";
 
-// image 
+// image
 
 import trypng from "Assets/try.png";
 
 // api
 import { API_GET_LIST_POST } from "Config/api"
 
-const Index = () => {	
+const Index = () => {
 
 	const [data, setData] = useState(null)
 	const [searching, setSearching] = useState(false)
 	const [error, setError] = useState(true)
-	
+
 	const fetchData = (headers) => {
 			fetch(API_GET_LIST_POST, {
 				method: "GET",
@@ -75,7 +75,7 @@ const Index = () => {
 	useEffect(() => {
 		handleGetPost()
 	}, [])
-	
+
 	const handleIsSearching = (bool) => {
 		setSearching(bool)
 	}
@@ -84,12 +84,11 @@ const Index = () => {
 		<>
 		<Wrapper>
 			<div>
-				<h1> Sharing <br/>
-						 Knowledge</h1>
+				<h1> Blogs </h1>
 			</div>
 			<Search isSearching={handleIsSearching} />
 			<Content>
-				{ error && !searching && 
+				{ error && !searching &&
 					<ErrorWrapper>
 						<img src={trypng} alt="something wrong"/>
 						<p>Something wrong</p>
@@ -107,7 +106,7 @@ const Index = () => {
 						{ data && data.map( item => {
 							let d = new Date(item.published);
 							return (
-								<li key={item.id}> 
+								<li key={item.id}>
 									<p>{d.toDateString()}</p>
 									<Link to={`/post/${item.id}`}>
 											<Title>{item.title}</Title>
@@ -117,7 +116,7 @@ const Index = () => {
 											<Label key={index}>{i}</Label>
 										))
 									}
-								</li> 
+								</li>
 							)
 						})
 						}

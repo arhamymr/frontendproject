@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import Logo from "Assets/logo.png";
-import { 
-	MenuHamburger, 
+import {
+	MenuHamburger,
 	Menu,
-	Container, 
-	Content, 
-	NavLogo, 
-	Urlname, 
+	Container,
+	Content,
+	NavLogo,
+	Urlname,
 	BoxOffline
 } from "./styled";
 
@@ -36,20 +35,17 @@ const Navbar = () => {
 			<Content>
 				<NavLogo>
 					<Link to='/'>
-						<img src={Logo} alt="logo"/>
+						me.
 					</Link>
 				</NavLogo>
 				<ul>
-					{/* <MenuHamburger 
+					{/* <MenuHamburger
 					// 	onClick={animationMenu}> <FiMenu/> </MenuHamburger>*/}
 					<li>
-						<Link to='/'>Index</Link>
+						<Link to='/blogs'>Blogs</Link>
 					</li>
 					<li>
-						<Link to='/Works'>Works</Link>
-					</li>
-					<li>
-						<Link to='/author'>Author</Link>
+						<a target="_blank" href="https://dribbble.com/arhamymr">Dribbble</a>
 					</li>
 				</ul>
 			</Content>

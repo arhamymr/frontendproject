@@ -12,7 +12,7 @@ export const colors = {
 }
 
 export const width = {
-	maxWidth: '1200px',
+	maxWidth: '1000px',
 	articleWidth: '700px'
 }
 

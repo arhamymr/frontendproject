@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { width } from "Utils";
-import DefaultImg from "Assets/default.png";
+import DefaultImg from "Assets/profil.png";
 
 export const Container = styled.div`
 	width: 100%;
