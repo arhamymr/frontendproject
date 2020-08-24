@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Container } from "./styled";
 import { Seo } from "Elements"
 
@@ -8,7 +8,7 @@ import Blogs from "Containers/blogs";
 const App = () => {
   return (
   		<>
-	  		<Seo title="Frontend Project"/>
+	  		<Seo title="Boxinteface: Blogs"/>
 	      <Container>
 	        <Blogs />
 	      </Container>

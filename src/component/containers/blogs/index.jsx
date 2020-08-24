@@ -1,128 +1,46 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
-import { Icons, Label, Button, Cursor } from "Elements"
+import { Card } from "Elements"
 
 import {
 	Content,
 	Wrapper,
-	Title,
-	SearchIcon,
-	SearchBox,
-	ErrorWrapper
+	Header
 } from "./styled";
 
+import { getListArticle } from './action';
+
 // part
-import Loading from "./loading"
-import Search from "./search"
 import Footer from "Containers/footer";
 
-// image
-
-import trypng from "Assets/try.png";
-
-// api
-import { API_GET_LIST_POST } from "Config/api"
 
 const Index = () => {
 
-	const [data, setData] = useState(null)
-	const [searching, setSearching] = useState(false)
-	const [error, setError] = useState(true)
-
-	const fetchData = (headers) => {
-			fetch(API_GET_LIST_POST, {
-				method: "GET",
-				headers: headers
-			})
-		  .then(response => {
-		  	if (response.status === 304) {
-		  		return setData(JSON.parse(localStorage.getItem("post")))
-		  	}
-		  	if (response.status === 200) {
-		  		return response.json()
-		  	}
-		  })
-		  .then(json => {
-		  	if (json) {
-			  	setData(json.items)
-			  	localStorage.setItem("etag", json.etag)
-			  	localStorage.setItem("post", JSON.stringify(json.items))
-			  }
-		  })
-		  .catch(e => setError(true))
-	}
-
-	const handleGetPost = () => {
-		setError(false)
-
-		const headers = {
-			"Accept-Encoding": "gzip",
-			"User-Agent": navigator.userAgent
-		}
-
-		if (localStorage.getItem("etag")) {
-			fetchData({
-				...headers,
-				"If-None-Match": localStorage.getItem("etag")
-			})
-		} else {
-			fetchData({
-				...headers
-			})
-		}
-	}
+	const [data, setData] = useState([])
 
 	useEffect(() => {
-		handleGetPost()
+		getListArticle()
+		.then(d => setData(d))
 	}, [])
 
-	const handleIsSearching = (bool) => {
-		setSearching(bool)
-	}
-
+	console.log("inside daat", data)
 	return (
 		<>
 		<Wrapper>
-			<div>
-				<h1> Blogs </h1>
-			</div>
-			<Search isSearching={handleIsSearching} />
+			<Header>
+					<h1> Blogs </h1>
+					<h3> Here i share some of my knowledge. </h3>
+			</Header>
 			<Content>
-				{ error && !searching &&
-					<ErrorWrapper>
-						<img src={trypng} alt="something wrong"/>
-						<p>Something wrong</p>
-						<Button className="expand" onClick={handleGetPost}> Try Again </Button>
-					</ErrorWrapper>
-				}
 				{
-					!searching && !error &&
-					<ul>
-					{ data === null ?
-						<Loading/>
-						:
+					data.map(item => (
 						<>
-						<Cursor/>
-						{ data && data.map( item => {
-							let d = new Date(item.published);
-							return (
-								<li key={item.id}>
-									<p>{d.toDateString()}</p>
-									<Link to={`/post/${item.id}`}>
-											<Title>{item.title}</Title>
-									</Link>
-									{
-										item.labels && item.labels.map((i, index) => (
-											<Label key={index}>{i}</Label>
-										))
-									}
-								</li>
-							)
-						})
-						}
+							<Card
+								image={"http://localhost:1337" + item?.cover?.url} title="test"
+							/>
+							<h2>{item.titleArticle}</h2>
+							<p>{item.description}</p>
 						</>
-					}
-					</ul>
+					))
 				}
 			</Content>
 		</Wrapper>

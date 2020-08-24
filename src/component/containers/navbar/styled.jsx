@@ -8,15 +8,6 @@ export const Container = styled.div`
 	background-color: ${({theme}) => theme.white };
 `
 
-export const BoxOffline = styled.div`
-    width: 100%;
-    padding: 16px;
-    text-align: center;
-    font-size: 15px;
-    background-color: ${({theme}) => theme.primary };
-    color: ${({theme}) => theme.white };
-`
-
 export const NavLogo = styled.div`
 	a {
 		text-decoration: none;
@@ -36,7 +27,7 @@ export const Content = styled.div`
 		align-items: flex-end;
 	}
 	transition: all 1s;
-	padding: 12px 16px;
+	padding: 12px 0;
 	> div {
 		display: flex;
 		align-items: center;

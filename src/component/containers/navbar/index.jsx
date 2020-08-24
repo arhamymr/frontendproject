@@ -5,8 +5,7 @@ import {
 	Container,
 	Content,
 	NavLogo,
-	Urlname,
-	BoxOffline
+	Urlname
 } from "./styled";
 
 import {
@@ -19,33 +18,29 @@ import { colors } from "Utils";
 import { FiMenu } from "react-icons/fi";
 import { IconContext } from "react-icons";
 
-// offline
-import { Offline } from "react-detect-offline";
-
 const Navbar = () => {
 	return (
 		<IconContext.Provider value={{ "size": "1.6em", color: colors.black }}>
 		<>
 		<Container>
-			<Offline>
-        <BoxOffline>
-            Youre offline right now. Check your connection.
-        </BoxOffline>
-    </Offline>
 			<Content>
 				<NavLogo>
 					<Link to='/'>
-						me.
+						boxinterface
 					</Link>
 				</NavLogo>
 				<ul>
-					{/* <MenuHamburger
-					// 	onClick={animationMenu}> <FiMenu/> </MenuHamburger>*/}
 					<li>
 						<Link to='/blogs'>Blogs</Link>
 					</li>
 					<li>
-						<a target="_blank" href="https://dribbble.com/arhamymr">Dribbble</a>
+						<Link to='/3dModels'>3D Models</Link>
+					</li>
+					<li>
+						<Link to='/Illustrations'>Illustrations</Link>
+					</li>
+					<li>
+						<Link to='/me'>Me</Link>
 					</li>
 				</ul>
 			</Content>

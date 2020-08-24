@@ -11,15 +11,8 @@ export const Container = styled.div`
   	padding-top: 0px;
   }
   h1 {
-    font-size: 96px;
+    font-size: 69px;
     font-weight: 600;
-  }
-  h2 {
-    font-size: 44px;
-    margin-bottom: 50px;
-  }
-  p {
-    font-size: 25px;
   }
 `
 
@@ -41,3 +34,9 @@ export const ProfilePicture = styled.div`
   height: 400px;
   background-size: cover;
 `
+
+export const Header = styled.div`
+	padding: 200px 0;
+	text-align: center;
+`
+

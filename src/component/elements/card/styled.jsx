@@ -9,7 +9,6 @@ export const Card = styled.div`
   color: ${({theme}) => theme.white };
   background-size: cover;
   width: 100%;
-  max-width: 500px;
   position: relative;
   cursor: pointer;
   height: 400px;
